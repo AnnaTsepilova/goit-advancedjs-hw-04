@@ -4,10 +4,6 @@ import 'izitoast/dist/css/iziToast.min.css';
 let isClosed = true;
 
 export default function notificationMessage(type, images = 0) {
-  //   if (!isClosed) {
-  //     return;
-  //   }
-
   isClosed = false;
   switch (type) {
     case 'error':
@@ -35,9 +31,6 @@ function errorMessage() {
       'Sorry, there are no images matching your search query. Please try again.',
     position: 'topRight',
     color: 'red',
-    onClosed: function () {
-      isClosed = true;
-    },
   });
 }
 
@@ -47,9 +40,6 @@ function warningSQmessage() {
     message: 'Please enter your search query.',
     position: 'topRight',
     color: 'yellow',
-    onClosed: function () {
-      isClosed = true;
-    },
   });
 }
 
@@ -59,9 +49,6 @@ function warningEndMessage() {
     message: "We're sorry, but you've reached the end of search results.",
     position: 'topRight',
     color: 'yellow',
-    onClosed: function () {
-      isClosed = true;
-    },
   });
 }
 
@@ -71,8 +58,5 @@ function successMessage(images) {
     message: `Hooray! We found  ${images.totalHits} images.`,
     position: 'topRight',
     color: 'green',
-    onClosed: function () {
-      isClosed = true;
-    },
   });
 }
