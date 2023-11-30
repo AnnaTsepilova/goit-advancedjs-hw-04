@@ -27,7 +27,7 @@ async function onSearch(event) {
 
   window.scrollTo(0, 0);
   page = 1;
-  const searchQuery = inputRef.value.toLowerCase();
+  const searchQuery = inputRef.value.trim().toLowerCase();
 
   if (searchQuery === '') {
     notificationMessage('warningSQ');
